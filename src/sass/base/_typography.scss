@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Montserrat:wght@700&display=swap');
+
+$font-primary: 'DM Sans', sans-serif;
+$font-secondary: 'Montserrat', sans-serif;
+
+h1 {
+  font-family: $font-secondary;
+  font-size: 2.5em;
+  margin-block-start: 0px !important;
+  margin-block-end: 0px !important;
+}
