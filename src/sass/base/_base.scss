@@ -40,3 +40,10 @@ li {
 a {
   all: unset;
 }
+
+::-webkit-scrollbar {
+  width: 0;
+  background-color: transparent;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

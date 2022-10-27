@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 
 import List from './List';
-export const listArr: Array<string> = ['services', 'about'];
+export const listArr: Array<string> = ['services', 'projects'];
 const list = listArr.map((i) => {
   return <List list={i} key={i} />;
 });

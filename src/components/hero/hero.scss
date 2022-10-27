@@ -1,16 +1,25 @@
 .hero {
   max-width: 1800px;
+  // @include respond(desktop) {
+  //   width: 1600px;
+  // }
   width: 100%;
+  padding: 0 20px;
   height: 80vh;
   @include flexbox(row, space-between, space-between);
+  gap: 150px;
 }
 
 .hero {
   &Slogan {
-    height: 100%;
-    width: 900px;
-    padding: 40px;
+    width: 1000px;
     @include flexbox(column, flex-start, center);
+    @include respond(desktop) {
+      width: 750px;
+    }
+    @include respond(small-desktop) {
+      width: 550px;
+    }
   }
 
   &Btn {

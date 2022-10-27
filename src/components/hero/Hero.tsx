@@ -1,5 +1,5 @@
 import * as React from 'react';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import SimpleImageSlider from 'react-simple-image-slider';
 
 import projectImg from '../../images/project.jpg';
@@ -26,7 +26,7 @@ const Hero = () => {
   return (
     <div className="hero">
       <SimpleImageSlider
-        width={900}
+        width={750}
         height={'80vh'}
         images={arr}
         showBullets={false}
@@ -37,9 +37,9 @@ const Hero = () => {
       />
       <div className="heroSlogan">
         <Header />
-        {/* <Link to="/contact" className="heroBtn">
+        <Link to="/contact" className="heroBtn">
           Tell us about your project
-        </Link> */}
+        </Link>
       </div>
     </div>
   );
