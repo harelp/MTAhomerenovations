@@ -5,7 +5,9 @@
     @include flexbox(row, center, center);
     height: 15vh;
     background-color: $color-light;
-    //box-shadow: rgb(34 51 84 / 20%) 0px 2px 8px -3px, rgb(34 51 84 / 10%) 0px 5px 22px -4px;
+    z-index: 100;
+    position: sticky;
+    top: 0;
   }
 
   &Container {
@@ -57,7 +59,6 @@
 
   &:hover {
     background-color: $color-dark;
-    color: $color-light;
     border: none !important;
   }
 }

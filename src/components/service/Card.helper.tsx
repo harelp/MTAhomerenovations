@@ -1,34 +1,37 @@
 import Card from './Card';
-import kitchen from '../../images/kitchens.jpg';
+import home from '../../images/home.png';
+import store from '../../images/store.png';
+import kitchen from '../../images/kitchen.png';
+import bathroom from '../../images/bathroom.png';
+import kitchenBg from '../../images/kitchenBg.jpg';
+import storeBg from '../../images/storeBg.jpg';
+import bathroomBg from '../../images/bathroomBg.png';
+import basementBg from '../../images/basementBg.jpg';
 
 const services = [
   {
-    name: 'Full Homes',
-    img: kitchen
-  },
-  {
     name: 'Basements',
-    img: kitchen
+    bg: basementBg,
+    icon: home
   },
   {
     name: 'Kitchens',
-    img: kitchen
+    bg: kitchenBg,
+    icon: kitchen
   },
   {
     name: 'Bathrooms',
-    img: kitchen
+    bg: bathroomBg,
+    icon: bathroom
   },
   {
-    name: 'Decks',
-    img: kitchen
-  },
-  {
-    name: 'Business',
-    img: kitchen
+    name: 'Businesses',
+    bg: storeBg,
+    icon: store
   }
 ];
 const service = services.map((service) => {
-  return <Card name={service.name} img={service.img} key={service.name} />;
+  return <Card name={service.name} bg={service.bg} icon={service.icon} key={service.name} />;
 });
 
 export default service;

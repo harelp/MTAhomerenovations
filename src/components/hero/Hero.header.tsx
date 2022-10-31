@@ -1,7 +1,7 @@
 import * as React from 'react';
 const Header = () => {
   return (
-    <div>
+    <div className="animateUp">
       <h1>Renovate with confidence</h1>
       <p>
         We’re dedicated to lasting relationships and quality renovations. Based in Hamilton,

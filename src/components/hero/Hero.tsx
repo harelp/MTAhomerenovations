@@ -27,7 +27,7 @@ const Hero = () => {
     <div className="hero">
       <SimpleImageSlider
         width={750}
-        height={'80vh'}
+        height={'85vh'}
         images={arr}
         showBullets={false}
         showNavs={false}
@@ -37,7 +37,7 @@ const Hero = () => {
       />
       <div className="heroSlogan">
         <Header />
-        <Link to="/contact" className="heroBtn">
+        <Link to="/contact" className="heroBtn animateSlideIn">
           Tell us about your project
         </Link>
       </div>

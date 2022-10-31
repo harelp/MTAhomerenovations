@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+// import Scroll from './components/scroll/Scroll';
 import Footer from './components/footer/Footer';
 import Hero from './components/hero/Hero';
 import Navbar from './components/navbar/Navbar';
@@ -10,10 +10,9 @@ function App() {
   return (
     <div className="app">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Hero />} />
-        <Route path="services" element={<Service />} />
-      </Routes>
+      <Hero />
+      {/* <Scroll /> */}
+      <Service />
       <Footer />
     </div>
   );

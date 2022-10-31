@@ -1,87 +1,91 @@
 .service {
   width: 100%;
-
-  &Hero {
-    height: 15vh;
-    padding: 0 20px;
-
-    h2 {
-      margin-bottom: 5px;
-    }
-  }
-
-  &Wrapper {
-    padding: 0 20px;
-    height: 100vh;
-    @include flexbox(row, center, center);
-  }
-}
-
-.serviceHero {
-  color: $color-grey-2;
-  background-color: $color-primary;
-  background-image: linear-gradient(
-    to right bottom,
-    rgba(213, 111, 111, 0.7),
-    rgba(180, 40, 40, 0.7)
-  );
-  background-size: cover;
-  background-position: center;
-  @include flexbox(row, center, center);
-}
-
-.content {
-  width: 1300px;
+  padding: 155px 0;
+  background-color: $color-grey;
+  @include flexbox(column, center, center);
 }
 
 .serviceContainer {
-  width: 1300px;
+  background: url('../../images/bg.png') no-repeat left 50px center;
+  max-width: 1800px;
+  width: 100%;
+  padding: 0 20px;
+  @include flexbox(row, center, center);
+}
+
+.service {
+  &List,
+  &Hero {
+    width: 700px;
+    color: $color-dark;
+  }
+}
+
+.serviceList {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 30px;
 }
 
-.card {
+.serviceCard {
   position: relative;
+  width: 350px;
+  height: 330px;
+  background: $color-light;
+  text-align: center;
   @include flexbox(column, center, center);
-  transition: all 0.5s ease;
+  box-shadow: 10px 41px 57px -17px rgb(0 0 0 / 22%);
 
-  img {
-    width: 100%;
-    height: 360px;
+  .cardIcon {
+    z-index: 1;
+    width: 80px;
+    height: 80px;
+    padding: 15px;
+    margin: 20px;
+    border: 1px solid $color-primary;
+    border-radius: 50%;
+  }
+  h5 {
+    // font-size: 20px;
+    font-weight: normal;
+    z-index: 1;
   }
 }
 
-.cardName {
-  z-index: 1;
-  background-color: $color-dark;
-  color: $color-grey-2;
-  width: 100%;
-  height: 40px;
-  margin-top: -25px;
-  @include flexbox(column, center, center);
+.cardBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 330px;
+  display: none;
 }
 
-.card {
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
+.serviceHero {
+  padding: 10px;
 
-  img {
-    filter: blur(1px);
-    -webkit-filter: blur(1px);
-    -moz-filter: blur(1px);
+  h5,
+  h1 {
+    text-transform: uppercase;
   }
 
-  &:hover {
-    filter: grayscale(0);
-    -webkit-filter: grayscale(0);
-    -moz-filter: grayscale(0);
+  h5 {
+    font-weight: normal;
+  }
+}
 
-    img {
-      filter: blur(0);
-      -webkit-filter: blur(0);
-      -moz-filter: blur(0);
-    }
+.serviceCard:hover {
+  .cardBg {
+    display: block;
+    animation: fade 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }
+
+  .cardIcon {
+    border: none;
+    background-color: $color-light;
+  }
+
+  h5 {
+    color: $color-light;
   }
 }
