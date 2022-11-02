@@ -5,7 +5,7 @@
   // }
   width: 100%;
   padding: 0 20px;
-  height: 85vh;
+  height: 90vh;
   @include flexbox(row, space-between, space-between);
   gap: 150px;
 }
@@ -13,8 +13,8 @@
 .hero {
   &Slogan {
     width: 1000px;
-    height: 90%;
-    @include flexbox(column, flex-start, flex-end);
+    height: 100%;
+    @include flexbox(column, flex-start, center);
     @include respond(desktop) {
       width: 750px;
     }

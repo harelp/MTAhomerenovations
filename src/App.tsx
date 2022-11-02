@@ -5,6 +5,7 @@ import Hero from './components/hero/Hero';
 import Navbar from './components/navbar/Navbar';
 import Service from './components/service/Service';
 import './sass/main.scss';
+import Contact from './components/contact/Contact';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Hero />
       <Service />
       <Project />
+      <Contact />
       <Footer />
     </div>
   );

@@ -27,7 +27,7 @@ const Hero = () => {
     <div className="hero">
       <SimpleImageSlider
         width={750}
-        height={'85vh'}
+        height={'90vh'}
         images={arr}
         showBullets={false}
         showNavs={false}

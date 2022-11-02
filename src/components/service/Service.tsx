@@ -22,32 +22,7 @@ const Service = () => {
           </p>
         </div>
 
-        <div className="serviceList">
-          {service}
-          {/* <div className="serviceCard">
-            <img className="cardBg" src={basementBg} alt="basement background image" />
-            <img className="cardIcon" src={home} alt="Basement or Home icon" />
-            <h5>Basements</h5>
-          </div>
-          <div className="serviceCard">
-            <img className="cardBg" src={kitchens} alt="kitchen background image" />
-            <img className="cardIcon" src={kitchen} alt="Kitchen icon" />
-
-            <h5>Kitchens</h5>
-          </div>
-          <div className="serviceCard">
-            <img className="cardBg" src={bathroomBg} alt="bathroom background image" />
-            <img className="cardIcon" src={bathroom} alt="Bathroom icon" />
-
-            <h5>Bathrooms</h5>
-          </div>
-          <div className="serviceCard">
-            <img className="cardBg" src={storeBg} alt="business background image" />
-            <img className="cardIcon" src={store} alt="business or store icon" />
-
-            <h5>Businesses</h5>
-          </div> */}
-        </div>
+        <div className="serviceList">{service}</div>
       </div>
     </div>
   );
