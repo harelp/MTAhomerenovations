@@ -3,7 +3,7 @@
     width: 100%;
     padding: 0 20px;
     @include flexbox(row, center, center);
-    height: 15vh;
+    height: 145.35px;
     background-color: $color-light;
     z-index: 100;
     position: sticky;
@@ -11,7 +11,7 @@
   }
 
   &Container {
-    max-width: 1300px;
+    max-width: 1600px;
     width: 100%;
     height: 100%;
     @include flexbox(row, center, space-between);

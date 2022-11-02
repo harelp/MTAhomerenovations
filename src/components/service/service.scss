@@ -1,6 +1,7 @@
 .service {
   width: 100%;
-  padding: 155px 0;
+  padding: 155px 20px;
+
   background-color: $color-grey;
   @include flexbox(column, center, center);
 }
@@ -9,7 +10,6 @@
   background: url('../../images/bg.png') no-repeat left 50px center;
   max-width: 1800px;
   width: 100%;
-  padding: 0 20px;
   @include flexbox(row, center, center);
 }
 
@@ -75,6 +75,9 @@
 }
 
 .serviceCard:hover {
+  box-shadow: 10px 41px 57px -17px rgba(255, 100, 34, 0.6);
+  transition-delay: 0.2s;
+  transform-style: ease-in-out;
   .cardBg {
     display: block;
     animation: fade 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);

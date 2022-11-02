@@ -30,8 +30,8 @@ const services = [
     icon: store
   }
 ];
-const service = services.map((service) => {
-  return <Card name={service.name} bg={service.bg} icon={service.icon} key={service.name} />;
+const service = services.map((service, i) => {
+  return <Card name={service.name} bg={service.bg} icon={service.icon} key={i} />;
 });
 
 export default service;
