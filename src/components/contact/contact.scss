@@ -4,16 +4,57 @@
   color: $color-light;
   width: 100%;
   @include flexbox(column, center, center);
-  h5 {
+
+  //Responsive
+  @include respond(phone) {
+    padding: 50px 10px;
+  }
+
+  &Container {
+    //Responsive
+    @include respond(phone) {
+      width: 100%;
+      @include flexbox(column, center, center);
+      margin-bottom: 50px;
+    }
+  }
+
+  .heading {
     font-size: 20px;
     letter-spacing: 5px;
     text-transform: uppercase;
     margin-bottom: 25px;
+    border-bottom: none;
+    //Responsive
+    @include respond(phone) {
+      padding: 0 20px;
+      width: 80%;
+      text-align: center;
+    }
+  }
+
+  h5 {
+    font-size: 15px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #888888;
+  }
+
+  p {
+    margin-bottom: 15px;
+    margin-left: 15px;
   }
 
   &Wrapper {
     width: 1800px;
     @include flexbox(row, center, space-around);
+
+    //Responsive
+    @include respond(phone) {
+      width: 100%;
+      @include flexbox(column, center, space-around);
+    }
   }
 }
 
@@ -32,6 +73,11 @@
   height: 200px !important;
   width: 400px !important;
   resize: none;
+
+  //Responsive
+  @include respond(phone) {
+    width: 100% !important;
+  }
 }
 .contactButton {
   grid-area: contactButton;
@@ -46,6 +92,18 @@
     'contactButton contactButton';
   width: 100%;
   grid-gap: 25px;
+
+  //Responsive
+  @include respond(phone) {
+    width: 100%;
+    grid-template-areas:
+      'name'
+      'email'
+      'phone'
+      'message'
+      'contactButton';
+    padding: 0;
+  }
 }
 
 // BUTTON STYLING
@@ -82,6 +140,11 @@ input[type='text'],
   box-shadow: 10px 41px 57px -17px rgb(0 0 0 / 22%);
   font-family: $font-primary;
   letter-spacing: 3px;
+
+  //Responsive
+  @include respond(phone) {
+    width: 100% !important;
+  }
 }
 
 input[type='text']:focus,
@@ -94,4 +157,15 @@ input[type='text']:focus,
 input[type='text']:hover,
 .message:hover {
   border: 2px solid #202020;
+}
+
+.contain {
+  @include flexbox(row, flex-start, flex-start);
+  &:first-child {
+    margin: 25px;
+  }
+}
+
+.contain:first-child {
+  margin: 5px;
 }

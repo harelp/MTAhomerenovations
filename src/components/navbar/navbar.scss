@@ -1,6 +1,6 @@
 .app {
   &Bar {
-    width: 100%;
+    width: 100vw;
     padding: 0 20px;
     @include flexbox(row, center, center);
     height: 120px;
@@ -8,13 +8,24 @@
     z-index: 100;
     position: sticky;
     top: 0;
+
+    // Responsive
+    @include respond(phone) {
+      @include flexbox(column, center, center);
+      height: 140px;
+    }
   }
 
   &Container {
-    max-width: 1600px;
-    width: 100%;
+    width: 1600px;
     height: 100%;
     @include flexbox(row, center, space-between);
+
+    // Responsive
+    @include respond(phone) {
+      @include flexbox(column, center, center);
+      width: 100vw;
+    }
   }
 }
 

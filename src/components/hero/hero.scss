@@ -1,13 +1,22 @@
 .hero {
-  max-width: 1800px;
-  // @include respond(desktop) {
-  //   width: 1600px;
-  // }
-  width: 100%;
+  width: 1800px;
   padding: 0 20px;
   height: 90vh;
   @include flexbox(row, space-between, space-between);
   gap: 150px;
+
+  // Responsive
+
+  @include respond(desktop) {
+    width: 1550px;
+  }
+  @include respond(phone) {
+    @include flexbox(column-reverse, center, flex-start);
+    width: 100vw;
+    padding: 50px 0 0 0;
+    height: 100% !important;
+    gap: 70px;
+  }
 }
 
 .hero {
@@ -15,17 +24,25 @@
     width: 1000px;
     height: 100%;
     @include flexbox(column, flex-start, center);
+
+    // Responsive
     @include respond(desktop) {
       width: 750px;
     }
-    @include respond(small-desktop) {
-      width: 550px;
+    @include respond(phone) {
+      width: 100vw;
+      align-items: center;
+      text-align: center;
+      padding: 0 10px !important;
+
+      h1 {
+        font-size: 1.8em;
+      }
     }
   }
 
   &Btn {
     margin-top: 25px;
-
     border: 0;
     outline: none;
     border-radius: 5px;

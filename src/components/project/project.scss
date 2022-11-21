@@ -9,22 +9,38 @@
   @include flexbox(column, center, center);
   color: $color-light;
 
+  //Responsive
+  @include respond(phone) {
+    width: 100vw;
+    padding: 50px 20px;
+  }
+
   h5 {
     text-transform: uppercase;
     letter-spacing: 5px;
   }
 
   &Wrapper {
-    max-width: 1600px;
-    width: 100%;
+    width: 1600px;
     @include flexbox(row, flex-start, space-between);
+
+    //Responsive
+    @include respond(phone) {
+      width: 100vw;
+      @include flexbox(column-reverse, center, center);
+    }
   }
 }
 
 .projectContent {
   position: relative;
-  //   text-align: left;
   margin: 1px 1px 25px 1px;
+
+  //Responsive
+  @include respond(phone) {
+    width: 100vw;
+    text-align: center;
+  }
 }
 
 .title {
@@ -36,6 +52,13 @@
   background-color: transparent;
   transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   cursor: pointer;
+
+  //Responsive
+  @include respond(phone) {
+    width: 100vw;
+    padding: 0;
+    font-size: 22px;
+  }
 }
 
 .projectNum {
@@ -45,6 +68,10 @@
   bottom: 0;
   font-size: 18px;
   letter-spacing: 4px;
+  //Responsive
+  @include respond(phone) {
+    display: none;
+  }
 }
 
 .projectContent:hover {
@@ -53,6 +80,11 @@
     font-size: 64px;
     transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     background-color: $color-dark;
+
+    //Responsive
+    @include respond(phone) {
+      font-size: 26px;
+    }
   }
 
   .projectNum {

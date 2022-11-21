@@ -1,16 +1,26 @@
 .service {
   width: 100%;
   padding: 155px 20px;
-
   background-color: $color-grey;
   @include flexbox(column, center, center);
+
+  //Responsive
+  @include respond(phone) {
+    padding: 60px 20px;
+  }
 }
 
 .serviceContainer {
   background: url('../../images/bg.png') no-repeat left 50px center;
-  max-width: 1800px;
-  width: 100%;
+  width: 1800px;
   @include flexbox(row, center, center);
+
+  //Responsive
+  @include respond(phone) {
+    @include flexbox(column, center, center);
+    width: 100vw;
+    height: 100% !important;
+  }
 }
 
 .service {
@@ -18,6 +28,11 @@
   &Hero {
     width: 700px;
     color: $color-dark;
+
+    //Responsive
+    @include respond(phone) {
+      width: 100vw;
+    }
   }
 }
 
@@ -25,6 +40,13 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 30px;
+
+  //Responsive
+  @include respond(phone) {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    // padding: 0 20px;
+  }
 }
 
 .serviceCard {

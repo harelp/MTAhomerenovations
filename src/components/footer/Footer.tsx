@@ -4,7 +4,7 @@ const Footer = () => {
     <div className="footer">
       <div className="footerContainer">
         <p>Copyright © 2022 MTA Home Renovations</p>
-        <p>Designed by Harel Peri</p>
+        <p>Harel Peri</p>
       </div>
     </div>
   );

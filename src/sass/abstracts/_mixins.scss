@@ -34,7 +34,7 @@ $breakpoint arguement choices:
     } //1450px
   }
   @if $breakpoint == desktop {
-    @media only screen and (max-width: 102em) {
+    @media only screen and (max-width: 1800px) {
       @content;
     } //1600px
   }
