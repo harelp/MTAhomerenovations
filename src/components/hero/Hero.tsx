@@ -6,11 +6,11 @@ import Header from './Hero.header';
 
 const Hero = () => {
   const [width, setWidth] = useState<string | number>(750);
+
   const [height, setHeight] = useState<string | number>('90vh');
 
   function checkWidth() {
     const width = screen.width;
-
     if (width <= 600) {
       setWidth('100vw');
       setHeight('300px');
@@ -19,6 +19,7 @@ const Hero = () => {
   }
 
   useEffect(() => {
+    checkWidth();
     window.addEventListener('resize', checkWidth);
   }, []);
 
