@@ -1,25 +1,22 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import { scrollToref } from '../../App.helper';
 
-import List from './List';
-export const listArr: Array<string> = ['services', 'projects'];
-const list = listArr.map((i) => {
-  return <List list={i} key={i} />;
-});
+interface scrollTo {
+  scrollTo: string | any;
+}
 
-const Navbar = () => {
+const Navbar = ({ scrollTo }: scrollTo) => {
   return (
-    <div className="appBar">
+    <div className="appBar" ref={scrollTo[0]}>
       <div className="appContainer">
-        <div className="appLogo">
-          <Link to="/">
-            mta<span>.</span>
-          </Link>
+        <div className="appLogo" onClick={() => scrollToref(scrollTo[0])}>
+          mta<span>.</span>
         </div>
         <ul className="appList">
-          {list}
-          <li className="appContact">
-            <Link to="contact">Contact</Link>
+          <li onClick={() => scrollToref(scrollTo[1])}>Services</li>
+          <li onClick={() => scrollToref(scrollTo[2])}>Projects</li>
+          <li className="appContact" onClick={() => scrollToref(scrollTo[3])}>
+            Contact
           </li>
         </ul>
       </div>

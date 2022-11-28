@@ -1,8 +1,13 @@
 import * as React from 'react';
 import renderProject from './projectBox.helper';
-const Project = () => {
+
+interface scrollTo {
+  scrollTo: string | any;
+}
+
+const Project = ({ scrollTo }: scrollTo) => {
   return (
-    <div className="project">
+    <div className="project" ref={scrollTo}>
       <div className="projectWrapper">
         <div className="projectContainer">{renderProject}</div>
         <h5>Our Works</h5>

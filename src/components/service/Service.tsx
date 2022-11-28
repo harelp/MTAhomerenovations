@@ -1,17 +1,13 @@
 import * as React from 'react';
-// import home from '../../images/home.png';
-// import store from '../../images/store.png';
-// import kitchen from '../../images/kitchen.png';
-// import bathroom from '../../images/bathroom.png';
-// import kitchens from '../../images/kitchens.jpg';
-// import storeBg from '../../images/store.jpg';
-// import bathroomBg from '../../images/bathroombg.png';
-// import basementBg from '../../images/basement.jpg';
-
 import service from './Card.helper';
-const Service = () => {
+
+interface scrollTo {
+  scrollTo: string | any;
+}
+
+const Service = ({ scrollTo }: scrollTo) => {
   return (
-    <div className="service">
+    <div className="service" ref={scrollTo}>
       <div className="serviceContainer">
         <div className="serviceHero">
           <h5>What we offer</h5>

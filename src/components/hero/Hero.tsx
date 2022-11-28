@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { scrollToref } from '../../App.helper';
 import { Link } from 'react-router-dom';
 import SimpleImageSlider from 'react-simple-image-slider';
 import arr from './Hero.helper';
 import Header from './Hero.header';
 
-const Hero = () => {
+interface scrollTo {
+  scrollTo: string | any;
+}
+
+const Hero = ({ scrollTo }: scrollTo) => {
   const [width, setWidth] = useState<string | number>(750);
 
   const [height, setHeight] = useState<string | number>('90vh');
@@ -37,7 +42,7 @@ const Hero = () => {
       />
       <div className="heroSlogan">
         <Header />
-        <Link to="/contact" className="heroBtn animateSlideIn">
+        <Link to="#" className="heroBtn animateSlideIn" onClick={() => scrollToref(scrollTo)}>
           Tell us about your project
         </Link>
       </div>

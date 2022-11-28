@@ -1,7 +1,3 @@
 .app {
   @include flexbox(column, center, center);
-
-  // @include respond(phone) {
-  //   overflow-x: hidden;
-  // }
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Project from './components/project/Project';
 import Footer from './components/footer/Footer';
 import Hero from './components/hero/Hero';
@@ -8,13 +8,18 @@ import './sass/main.scss';
 import Contact from './components/contact/Contact';
 
 function App() {
+  const header = useRef();
+  const services = useRef();
+  const projects = useRef();
+  const contact = useRef();
+
   return (
     <div className="app">
-      <Navbar />
-      <Hero />
-      <Service />
-      <Project />
-      <Contact />
+      <Navbar scrollTo={[header, services, projects, contact]} />
+      <Hero scrollTo={contact} />
+      <Service scrollTo={services} />
+      <Project scrollTo={projects} />
+      <Contact scrollTo={contact} />
       <Footer />
     </div>
   );

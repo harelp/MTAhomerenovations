@@ -1,13 +1,17 @@
-import * as React from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
-const Contact = () => {
+interface scrollTo {
+  scrollTo: string | any;
+}
+
+const Contact = ({ scrollTo }: scrollTo) => {
   function handleSubmit(evt: any) {
     evt.preventDefault();
   }
   return (
-    <div className="contact">
+    <div className="contact" ref={scrollTo}>
       <div className="contactWrapper">
         <div className="contactContainer">
           <h5 className="heading">Get In Touch</h5>
