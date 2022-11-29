@@ -29,14 +29,14 @@ $breakpoint arguement choices:
     } //1200px
   }
   @if $breakpoint == small-desktop {
-    @media only screen and (max-width: 90em) {
+    @media only screen and (max-width: 1600px) {
       @content;
     } //1450px
   }
   @if $breakpoint == desktop {
     @media only screen and (max-width: 1800px) {
       @content;
-    } //1600px
+    } //1800px
   }
 }
 

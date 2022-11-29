@@ -25,6 +25,19 @@
     @include flexbox(row, flex-start, space-between);
 
     //Responsive
+    @include respond(desktop) {
+      width: 100vw;
+      @include flexbox(row, flex-start, space-around);
+    }
+    @include respond(small-desktop) {
+      width: 100vw;
+      @include flexbox(row, flex-start, space-around);
+    }
+    @include respond(tab-land) {
+      width: 100vw;
+      @include flexbox(column-reverse, center, center);
+    }
+
     @include respond(phone) {
       width: 100vw;
       @include flexbox(column-reverse, center, center);

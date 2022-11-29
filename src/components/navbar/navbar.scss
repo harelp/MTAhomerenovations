@@ -22,6 +22,12 @@
     @include flexbox(row, center, space-between);
 
     // Responsive
+    @include respond(desktop) {
+      @include flexbox(row, center, space-between);
+      width: 70vw;
+    }
+
+    // Responsive
     @include respond(phone) {
       @include flexbox(column, center, center);
       width: 100vw;

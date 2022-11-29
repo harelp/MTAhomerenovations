@@ -16,6 +16,18 @@
   @include flexbox(row, center, center);
 
   //Responsive
+
+  @include respond(desktop) {
+    width: 90vw;
+    @include flexbox(row, center, space-around);
+  }
+
+  @include respond(tab-land) {
+    @include flexbox(column, center, center);
+    width: 100vw;
+    height: 100% !important;
+  }
+
   @include respond(phone) {
     @include flexbox(column, center, center);
     width: 100vw;
@@ -29,7 +41,6 @@
     width: 700px;
     color: $color-dark;
 
-    //Responsive
     @include respond(phone) {
       width: 100vw;
     }

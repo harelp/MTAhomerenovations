@@ -5,11 +5,27 @@
   @include flexbox(row, space-between, space-between);
   gap: 150px;
 
-  // Responsive
+  //Responsive
+  // @include respond(desktop) {
+  //   @include flexbox(row, center, space-between);
+  //   width: 90vw;
+  // }
 
   @include respond(desktop) {
-    width: 1550px;
+    width: 100vw;
   }
+  @include respond(small-desktop) {
+    width: 100vw;
+    height: 700px;
+  }
+
+  @include respond(tab-port) {
+    @include flexbox(row, center, space-between);
+    width: 100vw;
+    height: 600px;
+    gap: 70px;
+  }
+
   @include respond(phone) {
     @include flexbox(column-reverse, center, flex-start);
     width: 100vw;
@@ -27,7 +43,7 @@
 
     // Responsive
     @include respond(desktop) {
-      width: 750px;
+      width: 50vw;
     }
     @include respond(phone) {
       width: 100vw;

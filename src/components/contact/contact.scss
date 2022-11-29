@@ -12,6 +12,13 @@
 
   &Container {
     //Responsive
+
+    // @include respond(tab-port) {
+    //   width: 100%;
+    //   @include flexbox(column, center, center);
+    //   margin-bottom: 50px;
+    // }
+
     @include respond(phone) {
       width: 100%;
       @include flexbox(column, center, center);
@@ -51,6 +58,17 @@
     @include flexbox(row, center, space-around);
 
     //Responsive
+    @include respond(desktop) {
+      width: 100%;
+      @include flexbox(row, center, space-around);
+    }
+
+    @include respond(tab-land) {
+      gap: 70px;
+      width: 100%;
+      @include flexbox(column, center, space-around);
+    }
+
     @include respond(phone) {
       width: 100%;
       @include flexbox(column, center, space-around);

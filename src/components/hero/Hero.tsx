@@ -16,6 +16,34 @@ const Hero = ({ scrollTo }: scrollTo) => {
 
   function checkWidth() {
     const width = screen.width;
+
+    // desktop
+    if (width >= 1601) {
+      setWidth('750px');
+      setHeight('90vh');
+      return;
+    }
+
+    // small-desktop
+    if (width <= 1600 && width >= 1201) {
+      setWidth('50vw');
+      setHeight('700px');
+      return;
+    }
+
+    // tab-land
+    if (width <= 1200 && width >= 901) {
+      setWidth('50vw');
+      setHeight('700px');
+      return;
+    }
+    // tab-port
+    if (width <= 900 && width >= 601) {
+      setWidth('45vw');
+      setHeight('600px');
+      return;
+    }
+    // Phone
     if (width <= 600) {
       setWidth('100vw');
       setHeight('300px');
