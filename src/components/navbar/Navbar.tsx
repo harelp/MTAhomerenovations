@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { scrollToref } from '../../App.helper';
 
 interface scrollTo {
@@ -6,10 +7,20 @@ interface scrollTo {
 }
 
 const Navbar = ({ scrollTo }: scrollTo) => {
+  const { pathname } = useLocation();
+  const history = useNavigate();
+
+  const clickHandler = () => {
+    const path = pathname === '/';
+
+    path && scrollToref(scrollTo[0]);
+    !path && history('/');
+  };
+
   return (
     <div className="appBar" ref={scrollTo[0]}>
       <div className="appContainer">
-        <div className="appLogo" onClick={() => scrollToref(scrollTo[0])}>
+        <div className="appLogo" onClick={clickHandler}>
           mta<span>.</span>
         </div>
         <ul className="appList">

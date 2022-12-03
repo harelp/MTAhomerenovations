@@ -4,6 +4,7 @@
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   padding: 200px 20px;
   width: 100%;
   @include flexbox(column, center, center);

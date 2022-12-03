@@ -5,7 +5,7 @@ const Box = (props: any) => {
   const { name, num } = props;
   return (
     <div className="projectContent">
-      <Link to="#" className="title">
+      <Link to="/display" className="title">
         {name}
       </Link>
       <h6 className="projectNum">{num}</h6>
