@@ -17,12 +17,9 @@ const Navbar = ({ scrollTo }: scrollTo) => {
     !path && history('/');
   };
 
-  return (
-    <div className="appBar" ref={scrollTo[0]}>
-      <div className="appContainer">
-        <div className="appLogo" onClick={clickHandler}>
-          mta<span>.</span>
-        </div>
+  const renderLinks = () => {
+    if (pathname === '/') {
+      return (
         <ul className="appList">
           <li onClick={() => scrollToref(scrollTo[1])}>Services</li>
           <li onClick={() => scrollToref(scrollTo[2])}>Projects</li>
@@ -30,6 +27,17 @@ const Navbar = ({ scrollTo }: scrollTo) => {
             Contact
           </li>
         </ul>
+      );
+    }
+  };
+
+  return (
+    <div className="appBar" ref={scrollTo[0]}>
+      <div className="appContainer">
+        <div className="appLogo" onClick={clickHandler}>
+          mta<span>.</span>
+        </div>
+        {renderLinks()}
       </div>
     </div>
   );

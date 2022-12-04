@@ -7,7 +7,7 @@ interface scrollTo {
 
 const Service = ({ scrollTo }: scrollTo) => {
   return (
-    <div className="service" ref={scrollTo}>
+    <div className="service" ref={scrollTo} id="test">
       <div className="serviceContainer">
         <div className="serviceHero">
           <h5>What we offer</h5>

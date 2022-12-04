@@ -7,7 +7,7 @@ interface scrollTo {
 
 const Project = ({ scrollTo }: scrollTo) => {
   return (
-    <div className="project" ref={scrollTo}>
+    <div className="project" ref={scrollTo} id="Project">
       <div className="projectWrapper">
         <div className="projectContainer">{renderProject}</div>
         <h5>Our Work</h5>

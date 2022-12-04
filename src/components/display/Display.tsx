@@ -12,7 +12,7 @@ const Display = () => {
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(255, 144, 0, 0.4), rgba(255, 144, 0, 0.5)), url(${imag})`
         }}>
-        <h1>My first Project</h1>
+        <h1>A house at Kaufman Dr</h1>
       </div>
 
       <div className="displayContent">

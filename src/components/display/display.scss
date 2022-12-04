@@ -5,6 +5,13 @@
   background-size: cover;
   @include flexbox(column, center, center);
   color: $color-light;
+
+  @include respond(phone) {
+    height: 80px;
+    h1 {
+      font-size: 20px;
+    }
+  }
 }
 
 .displayContent {
@@ -12,13 +19,27 @@
   height: 100%;
   padding: 150px 20px;
   @include flexbox(column, center, center);
+  //Responsive
+  @include respond(phone) {
+    height: 100%;
+    padding: 50px 20px;
+    @include flexbox(column, center, flex-start);
+  }
 }
 
 .displayGallery {
+  width: 80%;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 5vw);
+  grid-template-rows: repeat(8, 8vw);
   grid-gap: 1.5rem;
+
+  //Responsive
+  @include respond(phone) {
+    width: 100%;
+    grid-gap: 0.2rem;
+    grid-template-rows: repeat(8, 15vw);
+  }
 }
 
 .gallery__img {

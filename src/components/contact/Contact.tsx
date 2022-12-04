@@ -27,7 +27,7 @@ const Contact = ({ scrollTo }: scrollTo) => {
     setisSubmitting(false);
   }
   return (
-    <div className="contact" ref={scrollTo}>
+    <div className="contact" ref={scrollTo} id="Contact">
       <div className="contactWrapper">
         <div className="contactContainer">
           <h5 className="heading">Get In Touch</h5>

@@ -2,19 +2,7 @@ import Box from './ProjectBox';
 
 const boxContent = [
   {
-    name: 'My First Porject '
-  },
-  {
-    name: 'My First Porject'
-  },
-  {
-    name: 'My First Porject'
-  },
-  {
-    name: 'My First Porject'
-  },
-  {
-    name: 'My First Porject'
+    name: 'A house at Kaufman Dr'
   }
 ];
 
