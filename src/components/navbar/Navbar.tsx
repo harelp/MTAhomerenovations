@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { scrollToref } from '../../App.helper';
+import logo from '../../images/logo.png';
 
 interface scrollTo {
   scrollTo: string | any;
@@ -8,13 +9,13 @@ interface scrollTo {
 
 const Navbar = ({ scrollTo }: scrollTo) => {
   const { pathname } = useLocation();
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const clickHandler = () => {
     const path = pathname === '/';
 
     path && scrollToref(scrollTo[0]);
-    !path && history('/');
+    !path && navigate('/');
   };
 
   const renderLinks = () => {
@@ -34,9 +35,9 @@ const Navbar = ({ scrollTo }: scrollTo) => {
   return (
     <div className="appBar" ref={scrollTo[0]}>
       <div className="appContainer">
-        <div className="appLogo" onClick={clickHandler}>
-          mta<span>.</span>
-        </div>
+        <img src={logo} alt="MTA Logo" className="logo" onClick={clickHandler} />
+        {/* mta<span>.</span> */}
+
         {renderLinks()}
       </div>
     </div>

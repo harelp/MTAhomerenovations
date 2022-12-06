@@ -46,7 +46,7 @@ const Hero = ({ scrollTo }: scrollTo) => {
     // Phone
     if (width <= 600) {
       setWidth('100vw');
-      setHeight('300px');
+      setHeight('350px');
       return;
     }
   }

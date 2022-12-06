@@ -11,8 +11,8 @@
 
     // Responsive
     @include respond(phone) {
-      @include flexbox(column, center, center);
-      height: 140px;
+      // @include flexbox(column, center, center);
+      height: 105px;
     }
   }
 
@@ -35,14 +35,15 @@
   }
 }
 
-.appLogo {
-  color: $color-dark;
+.logo {
   cursor: pointer;
-  font-family: $font-secondary;
-  font-size: 2.3em;
+  width: 200px;
+  height: 65px;
 
-  & > span {
-    color: $color-primary;
+  // Responsive
+  @include respond(phone) {
+    width: 160px;
+    height: 55px;
   }
 }
 
@@ -50,6 +51,12 @@
   width: 350px;
   @include flexbox(row, space-between, space-between);
   font-size: 1em;
+
+  // Responsive
+  @include respond(phone) {
+    font-size: 0.7em;
+    @include flexbox(row, center, space-around);
+  }
 
   & li {
     padding: 8px 16px;

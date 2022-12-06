@@ -2,7 +2,7 @@ import Box from './ProjectBox';
 
 const boxContent = [
   {
-    name: 'A house at Kaufman Dr'
+    name: 'Some of our 2022 Work'
   }
 ];
 

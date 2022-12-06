@@ -8,6 +8,8 @@ import Service from './components/service/Service';
 import Contact from './components/contact/Contact';
 import Display from './components/display/Display';
 import './sass/main.scss';
+// import Login from './components/user/Login';
+// import SignIn from './components/user/SignIn';
 
 function App() {
   const header = useRef();
@@ -42,6 +44,8 @@ function App() {
             </>
           }
         />
+        {/* <Route path="/login" element={<SignIn />} />
+        <Route path="/login2" element={<Login />} /> */}
       </Routes>
     </div>
   );
