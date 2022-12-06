@@ -1,18 +1,20 @@
 import * as React from 'react';
-import imag from '../../images/project.jpg';
-import img1 from '../../images/heroImgs/1.jpeg';
-import img2 from '../../images/heroImgs/2.jpeg';
-import img3 from '../../images/heroImgs/3.jpeg';
-import img4 from '../../images/heroImgs/4.jpeg';
+
+import img1 from '../../images/project/1.jpeg';
+import img2 from '../../images/project/2.jpeg';
+import img3 from '../../images/project/3.jpeg';
+import img4 from '../../images/project/4.jpeg';
+import img5 from '../../images/project/5.jpeg';
+import img6 from '../../images/project/6.jpeg';
 const Display = () => {
   return (
     <div className="display">
       <div
         className="displayHero"
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(255, 144, 0, 0.4), rgba(255, 144, 0, 0.5)), url(${imag})`
+          backgroundImage: `linear-gradient(to bottom, rgba(255, 144, 0, 0.4), rgba(255, 144, 0, 0.5)), url(${img2})`
         }}>
-        <h1>A house at Kaufman Dr</h1>
+        <h1>Some of our 2022 Work</h1>
       </div>
 
       <div className="displayContent">
@@ -30,10 +32,10 @@ const Display = () => {
             <img src={img4} className="gallery__img" alt="Gallery image 4" />
           </figure>
           <figure className="gallery__item gallery__item--5">
-            <img src={imag} className="gallery__img" alt="Gallery image 5" />
+            <img src={img5} className="gallery__img" alt="Gallery image 5" />
           </figure>
           <figure className="gallery__item gallery__item--6">
-            <img src={img1} className="gallery__img" alt="Gallery image 6" />
+            <img src={img6} className="gallery__img" alt="Gallery image 6" />
           </figure>
         </div>
       </div>
