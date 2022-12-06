@@ -86,7 +86,7 @@ const Contact = ({ scrollTo }: scrollTo) => {
           <h5>Phone Number</h5>
           <div className="contain">
             <FontAwesomeIcon icon={faPhone} />
-            <p>+1 647 777 - 2222</p>
+            <p>+1 905 537 - 4520</p>
           </div>
         </div>
       </div>
