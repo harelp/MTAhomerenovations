@@ -1,0 +1,39 @@
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to right, #ffc837, #ff8008);
+}
+
+.loginWrapper {
+  border-radius: 5px;
+  width: 370px;
+  height: 500px;
+  background-color: $color-dark-blue;
+  @include flexbox(column, center, center);
+
+  //Responsive
+  @include respond(phone) {
+    width: 90vw;
+  }
+}
+
+.login {
+  color: $color-light;
+}
+
+.input-container {
+  @include flexbox(column, center, space-between);
+  height: 120px;
+  margin: 40px 0;
+}
+
+.log {
+  @include flexbox(row, center, space-between);
+  border-radius: 0 !important;
+  padding: 0 20px;
+}
