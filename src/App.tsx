@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import UserContext from './components/context/UserContext';
+import './sass/main.scss';
 import Project from './components/project/Project';
 import Footer from './components/footer/Footer';
 import Hero from './components/hero/Hero';
@@ -8,10 +9,9 @@ import Navbar from './components/navbar/Navbar';
 import Service from './components/service/Service';
 import Contact from './components/contact/Contact';
 import Display from './components/display/Display';
-import './sass/main.scss';
-import Login from './components/user/Login';
 import SignIn from './components/user/SignIn';
 import Portal from './components/portal/Portal';
+import Upload from './components/portal/upload/Upload';
 
 function App() {
   const [user, setUser] = useState<string | null>(null);
@@ -49,8 +49,8 @@ function App() {
             }
           />
           <Route path="/login" element={<SignIn />} />
-          <Route path="/login2" element={<Login />} />
           <Route path="/portal" element={<Portal />} />
+          <Route path="/upload" element={<Upload />} />
         </Routes>
       </UserContext.Provider>
     </div>

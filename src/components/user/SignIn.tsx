@@ -3,10 +3,12 @@ import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { ToastContainer, Bounce } from 'react-toastify';
 
 // Custom Imports
 import { UserContext } from '../context/UserContext';
 import { signInHandler } from './login.helper';
+import { isLoading, loaded } from './toast.helper';
 
 interface IInput {
   email: string;
@@ -14,26 +16,22 @@ interface IInput {
 }
 
 const SignIn = () => {
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
   const [input, setInput] = useState<IInput>({} as IInput);
   const navigate = useNavigate();
 
   const handleSubmit = async (evt: any) => {
     evt.preventDefault();
+    isLoading('Logging In');
     const User: string | any = await signInHandler(input);
-    setUser(User);
-    navigate('/portal');
-    console.log(User);
-    if (user) {
-      console.log('asd');
+    if (User?.null) {
+      loaded(User.errorCode, 'error');
+    } else {
+      setUser(User);
+      loaded('Success', 'success');
+      navigate('/portal');
     }
   };
-
-  // useEffect(() => {
-  //   return () => {
-  //     alert('logged out');
-  //   };
-  // }, []);
 
   const handleChange = (evt: any) => {
     setInput({ ...input, [evt.target.id]: evt.target.value });
@@ -62,6 +60,7 @@ const SignIn = () => {
           </div>
         </form>
       </div>
+      <ToastContainer position="top-center" transition={Bounce} />
     </div>
   );
 };
