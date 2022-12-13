@@ -1,0 +1,16 @@
+.uploadContainer {
+  width: 100vw;
+  height: 100vh;
+  @include flexbox(column, center, center);
+}
+
+.uploadForm {
+  width: 350px;
+  @include flexbox(column, center, center);
+}
+
+.uploadInput {
+  width: 100% !important;
+  color: $color-dark !important;
+  text-transform: capitalize;
+}

@@ -1,6 +1,30 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+export const toastInt = (data: string, type: string) => {
+  if (type === 'error') {
+    toast.error(data, {
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      progress: undefined,
+      theme: 'dark'
+    });
+  }
+
+  if (type === 'ok') {
+    toast.success(data, {
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      progress: undefined,
+      pauseOnHover: false,
+      theme: 'dark'
+    });
+  }
+};
+
 export const notify = () =>
   toast('Wow so easy !', {
     hideProgressBar: true,
