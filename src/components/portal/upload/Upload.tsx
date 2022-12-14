@@ -1,39 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ToastContainer, Bounce } from 'react-toastify';
+
+// custom imports
 import uplImg from './upload.helper';
 import { saveData } from './saveData.helper';
 import { toastInt } from '../../user/toast.helper';
-import { ToastContainer, Bounce } from 'react-toastify';
+import { UserContext } from '../../context/UserContext';
+
 const Upload = () => {
+  // state's
+  const [loading, setLoading] = useState(false);
   const [img, setimg] = useState<any>(null);
   const [name, setName] = useState<string>('');
   const [imgArr, setImgArr] = useState<Array<any>>([]);
+  const { user } = useContext(UserContext);
+
+  // Functions
+  const navigate = useNavigate();
 
   const selectImg = (evt: any) => {
     setimg(evt.target.files[0]);
   };
 
   const uploadImg = async (evt: any) => {
+    setLoading(true);
     evt.preventDefault();
     if (img === null) {
+      setLoading(false);
       toastInt('Please Select an Image', 'error');
       return;
     }
     const imgName = await uplImg(img, img.name);
     if (imgName.code === true) {
-      setImgArr(() => [...imgArr, imgName.data]);
+      toastInt('Image Uploaded', 'ok');
+      const stateImgArr = [...imgArr, imgName.data];
+      const newArr: any = new Set<any>(stateImgArr);
+      setImgArr(() => [...newArr]);
+      setLoading(false);
     } else {
       console.log(imgName.data);
+      setLoading(false);
     }
-
-    // https://www.youtube.com/watch?v=YOAeBSCkArA&ab_channel=PedroTech
   };
 
   const handleSubmit = async (evt: any) => {
+    setLoading(true);
     evt.preventDefault();
 
     if (name.length <= 0) toastInt('Project Name is Empty', 'error');
     if (name.length > 0) {
       if (imgArr.length <= 0) {
+        setLoading(false);
         toastInt('Please upload atleast 1 image', 'error');
         return;
       }
@@ -45,8 +63,16 @@ const Upload = () => {
         toastInt('Problem Uploading Project', 'error');
         console.log(isDataSaved);
       }
+      setLoading(false);
+      !loading && navigate('/portal');
     }
   };
+
+  useEffect(() => {
+    if (!user) {
+      navigate('/login');
+    }
+  }, []);
 
   return (
     <div className="uploadContainer">
@@ -71,18 +97,27 @@ const Upload = () => {
             style={{ marginTop: '15px' }}
             className="uploadInput"
             onChange={selectImg}
+            disabled={loading}
           />
-          <button className="btn_submit" onClick={uploadImg}>
+          <button
+            className="btn_submit"
+            disabled={loading}
+            style={{ marginTop: '15px', backgroundColor: 'black', borderRadius: '0' }}
+            onClick={uploadImg}>
             Upload Image
           </button>
         </div>
 
-        <button className="btn_submit" type="submit" style={{ marginTop: '15px' }}>
+        <button
+          className="btn_submit"
+          type="submit"
+          style={{ marginTop: '15px' }}
+          disabled={loading}>
           Save Project
         </button>
       </form>
       <div>
-        <h4>Uploads:</h4>
+        <h4 style={{ marginTop: '15px' }}>Uploads:</h4>
         {imgArr.map((key, i) => {
           return <h5 key={i}>{imgArr[i]}</h5>;
         })}

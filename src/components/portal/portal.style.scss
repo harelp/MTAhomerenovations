@@ -22,6 +22,10 @@
   .projectIcon {
     font-size: 68px;
   }
+  //Responsive
+  @include respond(phone) {
+    width: 100%;
+  }
 }
 
 .portalProjectBox:hover {

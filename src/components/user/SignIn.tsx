@@ -1,4 +1,3 @@
-// import React, { useEffect } from 'react';
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -18,10 +17,12 @@ interface IInput {
 const SignIn = () => {
   const { setUser } = useContext(UserContext);
   const [input, setInput] = useState<IInput>({} as IInput);
+
   const navigate = useNavigate();
 
   const handleSubmit = async (evt: any) => {
     evt.preventDefault();
+
     isLoading('Logging In');
     const User: string | any = await signInHandler(input);
     if (User?.null) {
