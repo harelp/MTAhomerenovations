@@ -1,16 +1,21 @@
 import app from '../../../firebase.config';
-import { getStorage, ref, uploadBytes } from 'firebase/storage';
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 const storage = getStorage(app);
 
 const uplImg = async (file: any, name: any) => {
-  //const Ref = ref(storage, 'mountains.jpg');
   const imagesRef = ref(storage, `images/${name}`);
   try {
-    const uploadTask: any = await uploadBytes(imagesRef, file);
-    return {
-      code: true,
-      data: uploadTask.metadata.name
-    };
+    if (await uploadBytes(imagesRef, file)) {
+      const url = await getDownloadURL(ref(storage, `images/${name}`));
+      const newUrl = url.replace(/&.*$/, '');
+      console.log(newUrl);
+      return {
+        code: true,
+        data: newUrl
+      };
+    }
+
+    //const uploadTask: any = await uploadBytes(imagesRef, file);
   } catch (error) {
     return {
       code: false,

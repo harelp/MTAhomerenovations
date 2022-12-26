@@ -1,6 +1,7 @@
 .uploadContainer {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+  padding: 120px 20px;
   @include flexbox(column, center, center);
 }
 
@@ -13,4 +14,8 @@
   width: 100% !important;
   color: $color-dark !important;
   text-transform: capitalize;
+}
+
+.renderImages {
+  @include flexbox(column, center, center);
 }

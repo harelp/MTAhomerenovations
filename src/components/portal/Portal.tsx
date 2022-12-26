@@ -16,6 +16,7 @@ const Portal = () => {
   const navigate = useNavigate();
 
   const handleDelete = async (evt: string) => {
+    setLoading(true);
     const data = await deleteDocFunc(evt);
     if (data.code === 'ok') {
       toastInt('Project Deleted', 'ok');
@@ -23,6 +24,7 @@ const Portal = () => {
     } else {
       console.log(data.msg);
     }
+    setLoading(false);
   };
 
   const arr = Object.keys(project).map((projKey: any) => {

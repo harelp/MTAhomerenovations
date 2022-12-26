@@ -32,14 +32,14 @@ const Upload = () => {
       return;
     }
     const imgName = await uplImg(img, img.name);
-    if (imgName.code === true) {
+    if (imgName?.code === true) {
       toastInt('Image Uploaded', 'ok');
       const stateImgArr = [...imgArr, imgName.data];
       const newArr: any = new Set<any>(stateImgArr);
       setImgArr(() => [...newArr]);
       setLoading(false);
     } else {
-      console.log(imgName.data);
+      console.log(imgName?.data);
       setLoading(false);
     }
   };
@@ -116,10 +116,15 @@ const Upload = () => {
           Save Project
         </button>
       </form>
-      <div>
+      <div className="renderImages">
         <h4 style={{ marginTop: '15px' }}>Uploads:</h4>
         {imgArr.map((key, i) => {
-          return <h5 key={i}>{imgArr[i]}</h5>;
+          return (
+            <img
+              key={i}
+              src={imgArr[i]}
+              style={{ width: '300px', height: '300px', padding: '5px' }}></img>
+          );
         })}
       </div>
       <ToastContainer position="top-center" transition={Bounce} />
