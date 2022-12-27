@@ -20,7 +20,13 @@ const Upload = () => {
   const navigate = useNavigate();
 
   const selectImg = (evt: any) => {
-    setimg(evt.target.files[0]);
+    const ext = evt.target.files[0].type;
+    if (ext === 'image/png' || ext === 'image/jpeg') {
+      setimg(evt.target.files[0]);
+    } else {
+      toastInt('Please select a different File', 'error');
+      return;
+    }
   };
 
   const uploadImg = async (evt: any) => {

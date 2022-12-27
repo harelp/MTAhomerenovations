@@ -2,12 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import renderImages from './display.helper';
 const Display = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  // const imgsArr = location.state.docData.images;
   const [imgsArr, setImgsArr] = useState<any>([]);
   const [projName, setProjName] = useState<string>('');
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (location.state === null || undefined) {

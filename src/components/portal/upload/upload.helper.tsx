@@ -14,27 +14,12 @@ const uplImg = async (file: any, name: any) => {
         data: newUrl
       };
     }
-
-    //const uploadTask: any = await uploadBytes(imagesRef, file);
   } catch (error) {
     return {
       code: false,
       data: error
     };
   }
-
-  //   await uploadBytes(imagesRef, file).then(() => {
-  //     console.log('Uploaded a blob or file!');
-  //   });
 };
 
 export default uplImg;
-
-/* 
-1. go to upload page
-2. create project
-3. upload photos and create image object
-4. update database
-
-
-*/

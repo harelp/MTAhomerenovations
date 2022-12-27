@@ -36,8 +36,6 @@ const Navbar = ({ scrollTo }: scrollTo) => {
     <div className="appBar" ref={scrollTo[0]}>
       <div className="appContainer">
         <img src={logo} alt="MTA Logo" className="logo" onClick={clickHandler} />
-        {/* mta<span>.</span> */}
-
         {renderLinks()}
       </div>
     </div>
