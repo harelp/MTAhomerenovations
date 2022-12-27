@@ -1,0 +1,11 @@
+.loaderContainer {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include flexbox(column, center, center);
+  z-index: 1000;
+  background-color: rgb(230, 239, 233, 0.8);
+  backdrop-filter: blur(6px);
+}

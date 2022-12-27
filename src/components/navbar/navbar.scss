@@ -11,7 +11,6 @@
 
     // Responsive
     @include respond(phone) {
-      // @include flexbox(column, center, center);
       height: 105px;
     }
   }

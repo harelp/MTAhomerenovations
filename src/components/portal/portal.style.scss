@@ -1,0 +1,35 @@
+.portalContainer {
+  width: 100vw;
+  padding: 100px 20px 0 20px;
+}
+
+.portalWrapper {
+  padding: 20px;
+  @include flexbox(row, center, flex-start);
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.portalProjectBox {
+  font-family: $font-primary;
+  text-transform: uppercase;
+  width: 300px;
+  height: 300px;
+  @include flexbox(column, center, center);
+  background-color: $color-primary;
+  color: $color-light;
+  cursor: pointer;
+  .projectIcon {
+    font-size: 68px;
+  }
+  //Responsive
+  @include respond(phone) {
+    width: 100%;
+  }
+}
+
+.portalProjectBox:hover {
+  margin-top: -15px;
+  transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  opacity: 0.9;
+}

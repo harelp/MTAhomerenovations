@@ -168,15 +168,19 @@ input[type='password'],
 }
 
 input[type='text']:focus,
+input[type='password']:focus,
+input[type='email']:focus,
 .message:focus {
   outline: none !important;
-  border: 2px solid #202020;
+  border: 2px solid #6b6b6b;
   box-shadow: 10px 41px 57px -17px rgba(255, 100, 34, 0.6);
 }
 
 input[type='text']:hover,
+input[type='password']:hover,
+input[type='email']:hover,
 .message:hover {
-  border: 2px solid #202020;
+  border: 2px solid #6b6b6b;
 }
 
 .contain {

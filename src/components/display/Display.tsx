@@ -1,44 +1,34 @@
-import * as React from 'react';
-
-import img1 from '../../images/project/1.jpeg';
-import img2 from '../../images/project/2.jpeg';
-import img3 from '../../images/project/3.jpeg';
-import img4 from '../../images/project/4.jpeg';
-import img5 from '../../images/project/5.jpeg';
-import img6 from '../../images/project/6.jpeg';
+import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import renderImages from './display.helper';
 const Display = () => {
+  const [imgsArr, setImgsArr] = useState<any>([]);
+  const [projName, setProjName] = useState<string>('');
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (location.state === null || undefined) {
+      navigate('/');
+    } else {
+      setImgsArr(location.state.docData.images);
+      setProjName(location.state.docData.name);
+    }
+  }, []);
+
   return (
     <div className="display">
       <div
         className="displayHero"
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(255, 144, 0, 0.4), rgba(255, 144, 0, 0.5)), url(${img2})`
+          backgroundImage: `linear-gradient(to bottom, rgba(255, 144, 0, 0.4), rgba(255, 144, 0, 0.5)), url(${
+            imgsArr && imgsArr[Math.floor(Math.random() * 5)]
+          })`
         }}>
-        <h1>Some of our 2022 Work</h1>
+        <h1>{projName}</h1>
       </div>
 
-      <div className="displayContent">
-        <div className="displayGallery">
-          <figure className="gallery__item gallery__item--1">
-            <img src={img1} className="gallery__img" alt="Gallery image 1" />
-          </figure>
-          <figure className="gallery__item gallery__item--2">
-            <img src={img2} className="gallery__img" alt="Gallery image 2" />
-          </figure>
-          <figure className="gallery__item gallery__item--3">
-            <img src={img3} className="gallery__img" alt="Gallery image 3" />
-          </figure>
-          <figure className="gallery__item gallery__item--4">
-            <img src={img4} className="gallery__img" alt="Gallery image 4" />
-          </figure>
-          <figure className="gallery__item gallery__item--5">
-            <img src={img5} className="gallery__img" alt="Gallery image 5" />
-          </figure>
-          <figure className="gallery__item gallery__item--6">
-            <img src={img6} className="gallery__img" alt="Gallery image 6" />
-          </figure>
-        </div>
-      </div>
+      <div className="displayContent">{renderImages(imgsArr)}</div>
     </div>
   );
 };
